@@ -8,7 +8,7 @@
 <body>
     <h1 th:text="${title}"></h1>
     <div th:if="${users.isEmpty()}">No se encontro ningun registro....</div>
-    <table>
+    <table th:if="${not (users.isEmpty())}">
         <thead>
             <tr>
                 <th>Nombre de usuario</th>
@@ -20,7 +20,8 @@
             <tr th:each="user: ${users}">
                 <td th:text="${user.nombre}"></td>
                 <td th:text="${user.apellido}"></td>
-                <td th:text="${user.email}"></td>
+                <td th:if="${user.email}" th:text="${user.email}"></td>
+                <td th:if="${not (user.email != null)}" th:text="${'Email no disponible'}"></td>
             </tr>
         </tbody>
     </table>

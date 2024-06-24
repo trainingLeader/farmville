@@ -6,8 +6,7 @@ public class User {
     private String email;
     
     public User(String nombre, String apellido, String email) {
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this(nombre,apellido);
         this.email = email;
     }
     //Constructor de clase
