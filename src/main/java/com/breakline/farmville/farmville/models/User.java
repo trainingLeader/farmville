@@ -5,6 +5,9 @@ public class User {
     private String apellido;
     private String email;
     
+    
+    public User() {
+    }
     public User(String nombre, String apellido, String email) {
         this(nombre,apellido);
         this.email = email;
